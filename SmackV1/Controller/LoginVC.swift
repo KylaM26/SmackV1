@@ -19,5 +19,8 @@ class LoginVC: UIViewController {
     @IBAction func ExitLoginVC(sender: Any) {
         dismiss(animated: true, completion: nil);
     }
-
+    
+    @IBAction func CreateAccountPressed(sender: Any) {
+        performSegue(withIdentifier: CREATE_ACCOUNT_SEGUE, sender: nil);
+    }
 }
