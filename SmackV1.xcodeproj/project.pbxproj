@@ -15,6 +15,8 @@
 		D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174689A20DBDC2F0092189D /* ChannelVC.swift */; };
 		D17468A420DBDF840092189D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17468A220DBDF840092189D /* SWRevealViewController.m */; };
 		D17468A820DBE90E0092189D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468A720DBE90E0092189D /* GradientView.swift */; };
+		D17468AC20DC0A750092189D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468AB20DC0A750092189D /* Constants.swift */; };
+		D17468AE20DC14900092189D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468AD20DC14900092189D /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D17468A520DBDFAA0092189D /* SmackV1-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SmackV1-Bridging-Header.h"; sourceTree = "<group>"; };
 		D17468A620DBDFC20092189D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D17468A720DBE90E0092189D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D17468AB20DC0A750092189D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D17468AD20DC14900092189D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +50,9 @@
 		D174687220DBCAEE0092189D = {
 			isa = PBXGroup;
 			children = (
-				D17468A120DBDF6C0092189D /* Extra */,
 				D174687D20DBCAEE0092189D /* SmackV1 */,
 				D174687C20DBCAEE0092189D /* Products */,
+				D17468A120DBDF6C0092189D /* Extra */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,7 @@
 				D174688720DBCAEF0092189D /* LaunchScreen.storyboard */,
 				D174688520DBCAEF0092189D /* Assets.xcassets */,
 				D174688A20DBCAEF0092189D /* Info.plist */,
+				D17468A920DC0A420092189D /* Utilities */,
 			);
 			path = SmackV1;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			children = (
 				D174689820DBDC110092189D /* ChatVC.swift */,
 				D174689A20DBDC2F0092189D /* ChannelVC.swift */,
+				D17468AD20DC14900092189D /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +113,14 @@
 				D17468A520DBDFAA0092189D /* SmackV1-Bridging-Header.h */,
 			);
 			path = Extra;
+			sourceTree = "<group>";
+		};
+		D17468A920DC0A420092189D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D17468AB20DC0A750092189D /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +197,11 @@
 			files = (
 				D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */,
 				D174689920DBDC110092189D /* ChatVC.swift in Sources */,
+				D17468AE20DC14900092189D /* LoginVC.swift in Sources */,
 				D17468A820DBE90E0092189D /* GradientView.swift in Sources */,
 				D174687F20DBCAEE0092189D /* AppDelegate.swift in Sources */,
 				D17468A420DBDF840092189D /* SWRevealViewController.m in Sources */,
+				D17468AC20DC0A750092189D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
