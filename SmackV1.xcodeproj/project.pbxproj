@@ -14,6 +14,7 @@
 		D174689920DBDC110092189D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174689820DBDC110092189D /* ChatVC.swift */; };
 		D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174689A20DBDC2F0092189D /* ChannelVC.swift */; };
 		D17468A420DBDF840092189D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D17468A220DBDF840092189D /* SWRevealViewController.m */; };
+		D17468A820DBE90E0092189D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468A720DBE90E0092189D /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D17468A220DBDF840092189D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D17468A520DBDFAA0092189D /* SmackV1-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SmackV1-Bridging-Header.h"; sourceTree = "<group>"; };
 		D17468A620DBDFC20092189D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D17468A720DBE90E0092189D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		D174689620DBDBCC0092189D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D17468A720DBE90E0092189D /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */,
 				D174689920DBDC110092189D /* ChatVC.swift in Sources */,
+				D17468A820DBE90E0092189D /* GradientView.swift in Sources */,
 				D174687F20DBCAEE0092189D /* AppDelegate.swift in Sources */,
 				D17468A420DBDF840092189D /* SWRevealViewController.m in Sources */,
 			);
