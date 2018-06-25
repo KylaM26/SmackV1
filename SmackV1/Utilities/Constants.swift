@@ -22,5 +22,5 @@ let LOGGED_IN_KEY: String = "loggedIn";
 let USER_EMAIL: String = "userEmail";
 
 // URL constants
-let BASE_URL: String = "https://smackv1.herokuapp.com/v1/"; // Added v1 because in the api v1 is behind the URL.
-let URL_REGISTER: String = "\(BASE_URL)account/register"; // The URL for registering a user, check postman
+let BASE_URL: String = "https://smackapplication.herokuapp.com/v1/"; // Added v1 because in the api v1 is behind the URL.
+let URL_REGISTER: String = "\(BASE_URL)account/register"; // The URL for registering a user
