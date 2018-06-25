@@ -90,6 +90,7 @@ class AuthService {
                         self.offToken = token;
                     }
                 }
+                
                 // SWIFTY JSON
 //                guard let data = response.data else { return; }
 //                do {
@@ -109,7 +110,43 @@ class AuthService {
         }
     }
     
-    
+    func CreateUserAccount(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        let lowercaseEmail = email.lowercased();
+        
+        let body:[String: Any]  = [
+            "name": name,
+            "email": lowercaseEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ];
+        
+        let header = [
+            "Authorization":"Bearer \(AuthService.instance.offToken)",
+            "Content-Type":"application/json; charset=utf-8"
+        ];
+        
+        Alamofire.request(URL_USER_ADD, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error == nil {
+                
+                if let json = response.result.value as? Dictionary<String, Any> {
+                    if let name = json["name"] as? String {
+                        if let email = json["email"] as? String {
+                            if let avatarName = json["avatarName"] as? String {
+                                if let avatarColor = json["avatarColor"] as? String {
+                                    let id = json["_id"] as! String;
+                                    UserDataService.instance.SetUserData(ID: id, name: name, email: email, avatarName: avatarName, avatarColor: avatarColor);
+                                }
+                            }
+                        }
+                    }
+                }
+                completion(true);
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any);
+            }
+        }
+    }
     
     
     

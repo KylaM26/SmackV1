@@ -24,7 +24,8 @@ let USER_EMAIL: String = "userEmail";
 // URL constants
 let BASE_URL: String = "https://smackapplication.herokuapp.com/v1/"; // Added v1 because in the api v1 is behind the URL.
 let URL_REGISTER: String = "\(BASE_URL)account/register"; // The URL for registering a user
-let URL_LOGIN: String = "\(BASE_URL)account/login"; 
+let URL_LOGIN: String = "\(BASE_URL)account/login";
+let URL_USER_ADD: String = "\(BASE_URL)user/add"
 
 
 // API HEADERS
