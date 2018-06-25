@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
  // Will handle login, create, and register user functions, etc.
 
 class AuthService {
@@ -50,11 +51,6 @@ class AuthService {
         // Create a completion handler(constants), because when the data is being fetched we have to wait until it is back, or else we will be looking for data does not exist which will result in a crash.
         let lowercaseEmail = email.lowercased();
         
-        // API Header
-        let header = [
-            "Content-Type":"application/json; charset=utf-8"
-        ];
-        
         // API Body
         let body: [String: Any] = [
             "email": lowercaseEmail,
@@ -63,7 +59,7 @@ class AuthService {
         
         // POST REQUEST
         // The url to the register, what kind of http is it?, The body parameters, Regular JSON data, The header
-        Alamofire.request(URL_REGISTER, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+        Alamofire.request(URL_REGISTER, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
             if response.result.error == nil { // If there is no error.
                 completion(true); // We succesfully retrieved the data from the server.
             } else {
@@ -71,6 +67,46 @@ class AuthService {
                 debugPrint(response.result.error as Any); //  What went wrong.
             }
         };
+    }
+    
+    func LoginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        let lowercaseEmail = email.lowercased();
+        
+        let body:[String: Any] = [
+            "email": lowercaseEmail,
+            "password": password
+        ];
+        
+        Alamofire.request(URL_LOGIN, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                
+                // PARSE JSON DATA
+                if let json = response.result.value as? Dictionary<String, Any> { // JSON variable
+                    if let email = json["user"] as? String {
+                        self.userEmail = email; // Setting persistant email
+                    }
+
+                    if let token = json["token"] as? String {
+                        self.offToken = token;
+                    }
+                }
+                // SWIFTY JSON
+//                guard let data = response.data else { return; }
+//                do {
+//                    let json = try JSON(data: data);
+//                    self.userEmail = json["user"].stringValue
+//                    self.offToken = json["token"].stringValue;
+//                } catch {
+//                    print("Error parsing swifting JSON.");
+//                }
+                
+                self.isLoggedIn = true;
+                completion(true);
+            } else {
+                completion(false); // Any one that calls this function will know if the request was completed or not.
+                debugPrint(response.result.error as Any);
+            }
+        }
     }
     
     

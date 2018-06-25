@@ -4,6 +4,14 @@
    <FileRef
       location = "group:SmackV1.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:"
+      name = "Products">
+      <FileRef
+         location = "build:SmackV1.app"
+         assignedFileDataType = "com.apple.application-bundle">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

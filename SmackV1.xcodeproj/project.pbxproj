@@ -79,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				D174687D20DBCAEE0092189D /* SmackV1 */,
-				D174687C20DBCAEE0092189D /* Products */,
 				D17468A120DBDF6C0092189D /* Extra */,
 				507E98E8EDB8385CDA54C128 /* Pods */,
 				FF77B086E4D96313CB8E66F3 /* Frameworks */,
@@ -159,6 +158,7 @@
 		FF77B086E4D96313CB8E66F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D174687C20DBCAEE0092189D /* Products */,
 				832C1DAFE57480F3F9960683 /* Pods_SmackV1.framework */,
 			);
 			name = Frameworks;
