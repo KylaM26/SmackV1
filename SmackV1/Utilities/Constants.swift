@@ -15,6 +15,7 @@ typealias CompletionHandler = (_ Succcess: Bool) -> (); // A closure, once it is
 let LOGIN_SEGUE: String = "LoginVC";
 let CREATE_ACCOUNT_SEGUE: String = "CreateAccountVC";
 let UNWIND_CHANNEL: String = "UnwindToChannel";
+let AVATAR_PICKER_SEGUE: String = "AvatarPickerVC";
 
 // User deafults
 let TOKEN_KEY: String = "token";

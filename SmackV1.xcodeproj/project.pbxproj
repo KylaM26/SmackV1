@@ -21,6 +21,8 @@
 		D17468AC20DC0A750092189D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468AB20DC0A750092189D /* Constants.swift */; };
 		D17468AE20DC14900092189D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468AD20DC14900092189D /* LoginVC.swift */; };
 		D17468B020DC24760092189D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17468AF20DC24760092189D /* CreateAccountVC.swift */; };
+		D1B7F6FF20E75A87009DF498 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B7F6FE20E75A87009DF498 /* AvatarPickerVC.swift */; };
+		D1B7F70120E75D93009DF498 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B7F70020E75D93009DF498 /* AvatarCell.swift */; };
 		D1F7248120E151B700817D8C /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7248020E151B700817D8C /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		D17468AB20DC0A750092189D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D17468AD20DC14900092189D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D17468AF20DC24760092189D /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		D1B7F6FE20E75A87009DF498 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		D1B7F70020E75D93009DF498 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		D1F7248020E151B700817D8C /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,7 @@
 			children = (
 				D17468A720DBE90E0092189D /* GradientView.swift */,
 				D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */,
+				D1B7F70020E75D93009DF498 /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				D174689A20DBDC2F0092189D /* ChannelVC.swift */,
 				D17468AD20DC14900092189D /* LoginVC.swift */,
 				D17468AF20DC24760092189D /* CreateAccountVC.swift */,
+				D1B7F6FE20E75A87009DF498 /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */,
+				D1B7F6FF20E75A87009DF498 /* AvatarPickerVC.swift in Sources */,
 				D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */,
 				D174689920DBDC110092189D /* ChatVC.swift in Sources */,
 				D1F7248120E151B700817D8C /* UserDataService.swift in Sources */,
@@ -294,6 +301,7 @@
 				D16B76C920DDFCEE00ACD184 /* AuthService.swift in Sources */,
 				D17468AE20DC14900092189D /* LoginVC.swift in Sources */,
 				D17468A820DBE90E0092189D /* GradientView.swift in Sources */,
+				D1B7F70120E75D93009DF498 /* AvatarCell.swift in Sources */,
 				D174687F20DBCAEE0092189D /* AppDelegate.swift in Sources */,
 				D17468A420DBDF840092189D /* SWRevealViewController.m in Sources */,
 				D17468AC20DC0A750092189D /* Constants.swift in Sources */,
