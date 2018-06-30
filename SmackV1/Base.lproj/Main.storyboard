@@ -548,6 +548,9 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="yyO-rR-J5I" secondAttribute="bottom" constant="10" id="jNY-xP-l0k"/>
                                             <constraint firstItem="yyO-rR-J5I" firstAttribute="leading" secondItem="hEL-Km-ldl" secondAttribute="leadingMargin" constant="10" id="kW3-HE-qMv"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cellImage" destination="yyO-rR-J5I" id="weR-Th-RsL"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
