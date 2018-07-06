@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54AB219287E3C9A63618FA69 /* Pods_SmackV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832C1DAFE57480F3F9960683 /* Pods_SmackV1.framework */; };
+		D1033DE120EF6014008E2323 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1033DE020EF6014008E2323 /* CircleImage.swift */; };
 		D16B76C920DDFCEE00ACD184 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B76C820DDFCEE00ACD184 /* AuthService.swift */; };
 		D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */; };
 		D174687F20DBCAEE0092189D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174687E20DBCAEE0092189D /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		240FDB6C9CA94315C348772F /* Pods-SmackV1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackV1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmackV1/Pods-SmackV1.debug.xcconfig"; sourceTree = "<group>"; };
 		832C1DAFE57480F3F9960683 /* Pods_SmackV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmackV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D37161E1FAEACF3BDD0F52 /* Pods-SmackV1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmackV1.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmackV1/Pods-SmackV1.release.xcconfig"; sourceTree = "<group>"; };
+		D1033DE020EF6014008E2323 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		D16B76C820DDFCEE00ACD184 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		D174687B20DBCAEE0092189D /* SmackV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				D17468A720DBE90E0092189D /* GradientView.swift */,
 				D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */,
 				D1B7F70020E75D93009DF498 /* AvatarCell.swift */,
+				D1033DE020EF6014008E2323 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */,
 				D1B7F6FF20E75A87009DF498 /* AvatarPickerVC.swift in Sources */,
 				D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */,
+				D1033DE120EF6014008E2323 /* CircleImage.swift in Sources */,
 				D174689920DBDC110092189D /* ChatVC.swift in Sources */,
 				D1F7248120E151B700817D8C /* UserDataService.swift in Sources */,
 				D17468B020DC24760092189D /* CreateAccountVC.swift in Sources */,

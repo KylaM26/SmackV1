@@ -54,7 +54,7 @@
                                 <rect key="frame" x="104" y="74" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NdB-Wg-8vk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NdB-Wg-8vk" customClass="CircleImage" customModule="SmackV1" customModuleProvider="target">
                                 <rect key="frame" x="16" y="566" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="8kN-PJ-8ut"/>
@@ -403,7 +403,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PiL-00-5KD">
                                 <rect key="frame" x="37.5" y="346.5" width="300" height="88"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-Uv-7EA">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-Uv-7EA" customClass="CircleImage" customModule="SmackV1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="88" height="88"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="H2f-Ri-F7k"/>
@@ -456,9 +456,18 @@
                                     <action selector="CreateAccountPressed:" destination="1RR-X5-H3e" eventType="touchUpInside" id="Ddt-Oi-XGt"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-SN-Wuv">
+                                <rect key="frame" x="168" y="553.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Zc5-Ly-Kdd"/>
+                                    <constraint firstAttribute="height" constant="40" id="yP4-n0-OPM"/>
+                                </constraints>
+                                <color key="color" red="0.16078431369999999" green="0.63137254899999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pfx-SN-Wuv" firstAttribute="centerY" secondItem="pX4-BU-P4A" secondAttribute="centerY" constant="240" id="9lQ-ex-pr1"/>
                             <constraint firstItem="Vb5-xA-Dc5" firstAttribute="centerX" secondItem="PiL-00-5KD" secondAttribute="centerX" id="Bhw-Wi-Isy"/>
                             <constraint firstItem="TPV-JZ-3b0" firstAttribute="top" secondItem="jTB-7i-txn" secondAttribute="top" id="DK9-OS-xlq"/>
                             <constraint firstItem="Vb5-xA-Dc5" firstAttribute="top" secondItem="PiL-00-5KD" secondAttribute="bottom" constant="37" id="HBE-Lk-5ty"/>
@@ -466,6 +475,7 @@
                             <constraint firstItem="192-Vl-UxA" firstAttribute="centerX" secondItem="pX4-BU-P4A" secondAttribute="centerX" id="X43-Hy-yZ7"/>
                             <constraint firstItem="192-Vl-UxA" firstAttribute="top" secondItem="rzZ-pv-71H" secondAttribute="bottom" constant="32" id="dhb-Q3-M4Q"/>
                             <constraint firstItem="rzZ-pv-71H" firstAttribute="centerY" secondItem="pX4-BU-P4A" secondAttribute="centerY" constant="-180" id="niH-77-qkw"/>
+                            <constraint firstItem="pfx-SN-Wuv" firstAttribute="centerX" secondItem="pX4-BU-P4A" secondAttribute="centerX" id="oa9-OF-f30"/>
                             <constraint firstItem="rzZ-pv-71H" firstAttribute="centerX" secondItem="pX4-BU-P4A" secondAttribute="centerX" id="q7W-Vn-mex"/>
                             <constraint firstItem="PiL-00-5KD" firstAttribute="top" secondItem="192-Vl-UxA" secondAttribute="bottom" constant="21" id="xkW-Lp-JeN"/>
                             <constraint firstItem="jTB-7i-txn" firstAttribute="trailing" secondItem="TPV-JZ-3b0" secondAttribute="trailing" constant="15" id="yyY-4E-qM6"/>
@@ -473,6 +483,7 @@
                         <viewLayoutGuide key="safeArea" id="jTB-7i-txn"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pfx-SN-Wuv" id="O82-kT-sIL"/>
                         <outlet property="emailTxtField" destination="4J4-jB-SBP" id="P8B-wP-WGI"/>
                         <outlet property="passwordTxtField" destination="Nuw-Jd-ZHL" id="KRx-Cg-GDD"/>
                         <outlet property="userImage" destination="2kF-Uv-7EA" id="UqZ-yY-e71"/>

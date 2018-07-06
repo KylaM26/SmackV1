@@ -34,4 +34,8 @@ let HEADER = [
     "Content-Type":"application/json; charset=utf-8"
 ];
 
-// API BODIES
+// COLORS
+let smackPurplePlaceholder = #colorLiteral(red: 0.5910333991, green: 0.5910333991, blue: 0.5910333991, alpha: 0.5)
+
+// NOTIFICATIONS
+let NOTIFICATION_USER_DATA_CHANGED = Notification.Name("NotificationUserDataChanged");
