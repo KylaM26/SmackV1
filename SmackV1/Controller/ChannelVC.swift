@@ -11,10 +11,12 @@ import UIKit
 class ChannelVC: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var userImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60; // For slide panel.
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.UserDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
     }
 
     @IBAction func LoginPressed(_ sender: Any) {
@@ -22,4 +24,16 @@ class ChannelVC: UIViewController {
     }
     
     @IBAction func PrepareForUnwindSegue(segue: UIStoryboardSegue){}
+    
+    @objc func UserDataDidChange(_ notification: Notification) {
+        if AuthService.instance.isLoggedIn {
+            loginBtn.setTitle(UserDataService.instance.name, for: UIControlState.normal);
+            userImage.image = UIImage(named: UserDataService.instance.avatarName);
+            userImage.backgroundColor = UserDataService.instance.ReturnUIColor(components: UserDataService.instance.avatarColor);
+        } else {
+            loginBtn.setTitle("LOGIN", for: UIControlState.normal);
+            userImage.image = UIImage(named: "menuProfileIcon");
+            userImage.backgroundColor = UIColor.clear;
+        }
+    }
 }
