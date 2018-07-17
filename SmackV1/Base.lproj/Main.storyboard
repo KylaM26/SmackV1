@@ -614,7 +614,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l1-SC-UlI">
-                                        <rect key="frame" x="33" y="46" width="30" height="20"/>
+                                        <rect key="frame" x="20" y="46" width="30" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="N4A-vc-rN5"/>
                                             <constraint firstAttribute="height" constant="20" id="ZS2-PK-9xm"/>
@@ -625,7 +625,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="9cQ-iw-Blk"/>
-                                    <constraint firstItem="3l1-SC-UlI" firstAttribute="leading" secondItem="02P-NW-A9O" secondAttribute="leading" constant="33" id="FbV-qh-KiS"/>
+                                    <constraint firstItem="3l1-SC-UlI" firstAttribute="leading" secondItem="02P-NW-A9O" secondAttribute="leading" constant="20" id="FbV-qh-KiS"/>
                                     <constraint firstItem="7Rm-ma-6dX" firstAttribute="centerX" secondItem="02P-NW-A9O" secondAttribute="centerX" id="Hsj-qc-wS4"/>
                                     <constraint firstItem="7Rm-ma-6dX" firstAttribute="centerY" secondItem="3l1-SC-UlI" secondAttribute="centerY" id="Wvn-T1-fzw"/>
                                     <constraint firstItem="3l1-SC-UlI" firstAttribute="top" secondItem="02P-NW-A9O" secondAttribute="top" constant="46" id="zsn-2R-pfk"/>
