@@ -18,9 +18,12 @@ class ChannelVC: UIViewController {
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60; // For slide panel.
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.UserDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        SetUpUserInfo();
+    }
 
     @IBAction func LoginPressed(_ sender: Any) {
-        
         if(AuthService.instance.isLoggedIn) {
             let profile = ProfileVC();
             profile.modalPresentationStyle = UIModalPresentationStyle.custom;
@@ -33,6 +36,10 @@ class ChannelVC: UIViewController {
     @IBAction func PrepareForUnwindSegue(segue: UIStoryboardSegue){}
     
     @objc func UserDataDidChange(_ notification: Notification) {
+        SetUpUserInfo();
+    }
+    
+    func SetUpUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: UIControlState.normal);
             userImage.image = UIImage(named: UserDataService.instance.avatarName);

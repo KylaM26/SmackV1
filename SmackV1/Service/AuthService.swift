@@ -120,14 +120,8 @@ class AuthService {
             "avatarColor": avatarColor
         ];
         
-        let header = [
-            "Authorization":"Bearer \(AuthService.instance.offToken)",
-            "Content-Type":"application/json; charset=utf-8"
-        ];
-        
-        Alamofire.request(URL_USER_ADD, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_USER_ADD, method: HTTPMethod.post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
-                
                 if let json = response.result.value as? Dictionary<String, Any> {
                     if let name = json["name"] as? String {
                         if let email = json["email"] as? String {
@@ -149,24 +143,26 @@ class AuthService {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func FindUserByEmail(completeion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                if let json = response.result.value as? Dictionary<String, Any> {
+                    if let name = json["name"] as? String {
+                        if let email = json["email"] as? String {
+                            if let avatarName = json["avatarName"] as? String {
+                                if let avatarColor = json["avatarColor"] as? String {
+                                    let id = json["_id"] as! String;
+                                    UserDataService.instance.SetUserData(ID: id, name: name, email: email, avatarName: avatarName, avatarColor: avatarColor);
+                                }
+                            }
+                        }
+                    }
+                }
+                completeion(true);
+            } else {
+                completeion(false);
+                debugPrint(response as Any);
+            }
+        }
+    }
 }

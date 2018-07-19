@@ -80,7 +80,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="TE6-fb-4iQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="TE6-fb-4iQ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE6-fb-4iQ" id="gc9-EL-ja2">
@@ -232,6 +232,9 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="LoginPressed:" destination="QkU-sS-buX" eventType="touchUpInside" id="5lq-M3-Mdg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQs-Wv-HjY">
                                 <rect key="frame" x="127.5" y="508.5" width="119" height="36"/>
@@ -247,18 +250,33 @@
                                     <action selector="CreateAccountPressedWithSender:" destination="QkU-sS-buX" eventType="touchUpInside" id="O42-Dp-AOj"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-mg-d8U">
+                                <rect key="frame" x="168" y="314" width="40" height="40"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-It-iaZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kmj-gQ-jn2"/>
+                                    <constraint firstAttribute="width" constant="40" id="ZZy-Pa-8YS"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XQs-Wv-HjY" firstAttribute="top" secondItem="fqN-hN-pan" secondAttribute="bottom" constant="32" id="0fH-jp-4Of"/>
                             <constraint firstItem="j6p-vK-OUM" firstAttribute="centerX" secondItem="t7W-FB-Qi7" secondAttribute="centerX" id="2EY-3C-Ort"/>
                             <constraint firstItem="V8w-Hv-qhI" firstAttribute="trailing" secondItem="dQx-6f-C3b" secondAttribute="trailing" constant="15" id="3DC-K2-ib4"/>
+                            <constraint firstItem="ieh-mg-d8U" firstAttribute="centerX" secondItem="t7W-FB-Qi7" secondAttribute="centerX" id="4Nh-NE-ZDe"/>
                             <constraint firstItem="fqN-hN-pan" firstAttribute="top" secondItem="pmd-fu-RnT" secondAttribute="bottom" constant="45" id="Gbu-A4-OPP"/>
                             <constraint firstItem="XQs-Wv-HjY" firstAttribute="centerX" secondItem="fqN-hN-pan" secondAttribute="centerX" id="OrF-Ks-F1d"/>
                             <constraint firstItem="dQx-6f-C3b" firstAttribute="top" secondItem="V8w-Hv-qhI" secondAttribute="top" id="R1K-qx-7Tw"/>
                             <constraint firstItem="pmd-fu-RnT" firstAttribute="centerX" secondItem="yEQ-zZ-0Gb" secondAttribute="centerX" id="RgK-JA-lqN"/>
                             <constraint firstItem="e6o-Wf-rVf" firstAttribute="centerX" secondItem="j6p-vK-OUM" secondAttribute="centerX" id="TJp-BZ-WBz"/>
                             <constraint firstItem="e6o-Wf-rVf" firstAttribute="top" secondItem="j6p-vK-OUM" secondAttribute="bottom" constant="-1.6666666666666572" id="WlM-xD-Fbc"/>
+                            <constraint firstItem="ieh-mg-d8U" firstAttribute="centerY" secondItem="t7W-FB-Qi7" secondAttribute="centerY" id="ZCP-Mx-slB"/>
                             <constraint firstItem="j6p-vK-OUM" firstAttribute="centerY" secondItem="t7W-FB-Qi7" secondAttribute="centerY" constant="-150" id="hZd-hE-ykv"/>
                             <constraint firstItem="pmd-fu-RnT" firstAttribute="top" secondItem="yEQ-zZ-0Gb" secondAttribute="bottom" constant="42" id="r9O-V6-fI4"/>
                             <constraint firstItem="yEQ-zZ-0Gb" firstAttribute="centerX" secondItem="e6o-Wf-rVf" secondAttribute="centerX" id="rif-5F-xER"/>
@@ -268,6 +286,10 @@
                         <viewLayoutGuide key="safeArea" id="V8w-Hv-qhI"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="gvo-It-iaZ" id="gDR-Ow-3cJ"/>
+                        <outlet property="loginBtn" destination="fqN-hN-pan" id="BGR-qR-82E"/>
+                        <outlet property="passwordTxtField" destination="1cM-l2-EHj" id="5VP-QV-stV"/>
+                        <outlet property="userNameTxtField" destination="gIa-FP-O3o" id="OIr-Hg-xcC"/>
                         <segue destination="1RR-X5-H3e" kind="show" identifier="CreateAccountVC" id="pfI-ng-fCn"/>
                     </connections>
                 </viewController>
@@ -458,7 +480,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-SN-Wuv">
-                                <rect key="frame" x="168" y="553.5" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="553.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Zc5-Ly-Kdd"/>
                                     <constraint firstAttribute="height" constant="40" id="yP4-n0-OPM"/>

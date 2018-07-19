@@ -27,12 +27,19 @@ let BASE_URL: String = "https://smackapplication.herokuapp.com/v1/"; // Added v1
 let URL_REGISTER: String = "\(BASE_URL)account/register"; // The URL for registering a user
 let URL_LOGIN: String = "\(BASE_URL)account/login";
 let URL_USER_ADD: String = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL: String = "\(BASE_URL)user/byEmail/";
 
 
 // API HEADERS
 let HEADER = [
     "Content-Type":"application/json; charset=utf-8"
 ];
+
+let BEARER_HEADER = [
+    "Authorization":"Bearer \(AuthService.instance.offToken)",
+    "Content-Type":"application/json; charset=utf-8"
+];
+
 
 // COLORS
 let smackPurplePlaceholder = #colorLiteral(red: 0.5910333991, green: 0.5910333991, blue: 0.5910333991, alpha: 0.5)

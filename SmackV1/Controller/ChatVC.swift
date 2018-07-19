@@ -18,6 +18,12 @@ class ChatVC: UIViewController {
         revealBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside);
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer());
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer());
+        
+        if AuthService.instance.isLoggedIn {
+            AuthService.instance.FindUserByEmail { (success) in
+                NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
+            }
+        }
     }
 
 }

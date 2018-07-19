@@ -9,8 +9,6 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
-    
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var email: UILabel!
@@ -35,6 +33,7 @@ class ProfileVC: UIViewController {
         userName.text = UserDataService.instance.name;
         email.text = AuthService.instance.userEmail;
         userImage.image = UIImage(named: UserDataService.instance.avatarName);
+        userImage.backgroundColor = UserDataService.instance.ReturnUIColor(components: UserDataService.instance.avatarColor);
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)));
         bgView.addGestureRecognizer(closeTouch);
     }
