@@ -28,8 +28,8 @@ class MessageService {
                         }
                     }
                 }
-                print(self.channels[0].channelTitle);
                 print("Here!");
+                print(self.channels.count);
                 completion(true);
             } else {
                 completion(false);

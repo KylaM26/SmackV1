@@ -16,7 +16,6 @@ let LOGIN_SEGUE: String = "LoginVC";
 let CREATE_ACCOUNT_SEGUE: String = "CreateAccountVC";
 let UNWIND_CHANNEL: String = "UnwindToChannel";
 let AVATAR_PICKER_SEGUE: String = "AvatarPickerVC";
-
 // User deafults
 let TOKEN_KEY: String = "token";
 let LOGGED_IN_KEY: String = "loggedIn";
@@ -41,6 +40,8 @@ let BEARER_HEADER = [
     "Content-Type":"application/json; charset=utf-8"
 ];
 
+// IDENTIFIERS
+let CHANNEL_CELL_IDENTIFER = "ChannelCell";
 
 // COLORS
 let smackPurplePlaceholder = #colorLiteral(red: 0.5910333991, green: 0.5910333991, blue: 0.5910333991, alpha: 0.5)

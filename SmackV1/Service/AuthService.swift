@@ -161,6 +161,7 @@ class AuthService {
                 completeion(true);
             } else {
                 completeion(false);
+                print("Failed to find user by email.");
                 debugPrint(response as Any);
             }
         }
