@@ -39,6 +39,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func PrepareForUnwindSegue(segue: UIStoryboardSegue){}
     
+    @IBAction func AddChannelPressed(_ sender: Any) {
+        let addChannelVC = AddChannelVC();
+        addChannelVC.modalPresentationStyle =  UIModalPresentationStyle.custom;
+        present(addChannelVC, animated: true, completion: nil);
+    }
+    
     @objc func UserDataDidChange(_ notification: Notification) {
         SetUpUserInfo();
     }
