@@ -33,7 +33,13 @@ class AddChannelVC: UIViewController {
     }
     
     @IBAction func CreateChannelPressed(_sender: Any) {
-        
+        guard let channelName = titleTxtField.text, titleTxtField.text != "" else { return; }
+        guard let channelDescription = descriptionTxtField.text else {return; }
+        SocketService.instance.AddChannel(channelName: channelName, channelDescription: channelDescription) { (success) in
+            if success { // If the channel was created successfully.
+                self.dismiss(animated: true, completion: nil); // Dismiss the VC.
+            }
+        }
     }
     
     @objc func CloseTap(_ recognizer: UITapGestureRecognizer) {

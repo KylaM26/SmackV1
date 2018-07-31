@@ -31,6 +31,7 @@
 		D1B7F70120E75D93009DF498 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B7F70020E75D93009DF498 /* AvatarCell.swift */; };
 		D1EF963A2110346E001451A0 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF96382110346E001451A0 /* AddChannelVC.swift */; };
 		D1EF963B2110346E001451A0 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EF96392110346E001451A0 /* AddChannelVC.xib */; };
+		D1EF963D2110435E001451A0 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF963C2110435E001451A0 /* SocketService.swift */; };
 		D1F7248120E151B700817D8C /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7248020E151B700817D8C /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		D1B7F70020E75D93009DF498 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		D1EF96382110346E001451A0 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		D1EF96392110346E001451A0 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		D1EF963C2110435E001451A0 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		D1F7248020E151B700817D8C /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				D16B76C820DDFCEE00ACD184 /* AuthService.swift */,
 				D1F7248020E151B700817D8C /* UserDataService.swift */,
 				D118B75A2108601200A863AD /* MessageService.swift */,
+				D1EF963C2110435E001451A0 /* SocketService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1EF963D2110435E001451A0 /* SocketService.swift in Sources */,
 				D16B4D1020FDE0AC008F8433 /* ProfileVC.swift in Sources */,
 				D1682AC5210F059500BFE55B /* ChannelCell.swift in Sources */,
 				D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */,

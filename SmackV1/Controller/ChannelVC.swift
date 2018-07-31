@@ -21,6 +21,13 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.UserDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
         channelView.delegate = self;
         channelView.dataSource = self;
+        SocketService.instance.GetChannel { (success) in // Check for channels.
+            print("Function called");
+            if success {
+                print("Was successful.");
+                self.channelView.reloadData();
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +80,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = channelView.dequeueReusableCell(withIdentifier: CHANNEL_CELL_IDENTIFER, for: indexPath) as? ChannelCell {
             let channel = MessageService.instance.channels[indexPath.row];
             cell.UpdateCell(channel: channel);
-            print(MessageService.instance.channels.count);
             print("Channel \(indexPath.row): \(MessageService.instance.channels[indexPath.row])");
             return cell;
         }

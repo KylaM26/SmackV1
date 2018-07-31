@@ -14,6 +14,7 @@ class ChannelCell: UITableViewCell {
     
     func UpdateCell(channel: Channel) {
         let title = channel.channelTitle ?? "";
+        channelTitle.text = "#x\(title)";
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
