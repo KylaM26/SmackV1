@@ -21,6 +21,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.UserDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
         channelView.delegate = self;
         channelView.dataSource = self;
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelsLoaded(_:)), name: NOTIFICATION_CHANNELS_LOADED, object: nil);
+        
         SocketService.instance.GetChannel { (success) in // Check for channels.
             print("Function called");
             if success {
@@ -47,13 +50,19 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func PrepareForUnwindSegue(segue: UIStoryboardSegue){}
     
     @IBAction func AddChannelPressed(_ sender: Any) {
-        let addChannelVC = AddChannelVC();
-        addChannelVC.modalPresentationStyle =  UIModalPresentationStyle.custom;
-        present(addChannelVC, animated: true, completion: nil);
+        if AuthService.instance.isLoggedIn {
+            let addChannelVC = AddChannelVC();
+            addChannelVC.modalPresentationStyle =  UIModalPresentationStyle.custom;
+            present(addChannelVC, animated: true, completion: nil);
+        }
     }
     
     @objc func UserDataDidChange(_ notification: Notification) {
         SetUpUserInfo();
+    }
+    
+    @objc func ChannelsLoaded(_ notification: Notification) {
+        channelView.reloadData();
     }
     
     func SetUpUserInfo() {
@@ -65,6 +74,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginBtn.setTitle("LOGIN", for: UIControlState.normal);
             userImage.image = UIImage(named: "menuProfileIcon");
             userImage.backgroundColor = UIColor.clear;
+            channelView.reloadData();
         }
     }
     
@@ -85,5 +95,13 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         print("Channel view failed to load channel cells.");
         return UITableViewCell();
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedChannel = MessageService.instance.channels[indexPath.row];
+        MessageService.instance.selectedChannel = selectedChannel;
+        NotificationCenter.default.post(name: NOTIFICATION_CHANNEL_SELECTED, object: nil);
+        
+        self.revealViewController().revealToggle(animated: true);
     }
 }

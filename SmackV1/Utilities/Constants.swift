@@ -48,3 +48,5 @@ let smackPurplePlaceholder = #colorLiteral(red: 0.5910333991, green: 0.591033399
 
 // NOTIFICATIONS
 let NOTIFICATION_USER_DATA_CHANGED = Notification.Name("NotificationUserDataChanged");
+let NOTIFICATION_CHANNELS_LOADED = Notification.Name("NotificationChannelsLoaded");
+let NOTIFICATION_CHANNEL_SELECTED = Notification.Name("NotificationChannelSelected");

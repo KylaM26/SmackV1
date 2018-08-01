@@ -14,7 +14,6 @@ class CircleImage: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()
         SetupImage();
-        
     }
     
     override func prepareForInterfaceBuilder() {

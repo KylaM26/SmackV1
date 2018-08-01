@@ -13,6 +13,7 @@ class MessageService {
     static let instance = MessageService();
     
     var channels = [Channel]();
+    var selectedChannel: Channel?
     
     func FindAllChannels(completion: @escaping CompletionHandler) {
         Alamofire.request(URL_GET_CHANNELS, method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -28,13 +29,16 @@ class MessageService {
                         }
                     }
                 }
-                print("Here!");
-                print(self.channels.count);
+                NotificationCenter.default.post(name: NOTIFICATION_CHANNELS_LOADED, object: nil);
                 completion(true);
             } else {
                 completion(false);
                 debugPrint(response.result.error as Any);
             }
         }
+    }
+    
+    func ClearChannels() {
+        channels.removeAll();
     }
 }
