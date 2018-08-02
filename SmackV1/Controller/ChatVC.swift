@@ -13,9 +13,15 @@ class ChatVC: UIViewController {
     @IBOutlet weak var revealBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
 
+    @IBOutlet weak var messageTxtField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.bindToKeyboard();
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.HandleTap));
+        view.addGestureRecognizer(tap);
+        
         revealBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControlEvents.touchUpInside);
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer());
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer());
@@ -26,6 +32,19 @@ class ChatVC: UIViewController {
         if AuthService.instance.isLoggedIn {
             AuthService.instance.FindUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
+            }
+        }
+    }
+    
+    @IBAction func SendMessagePressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelID = MessageService.instance.selectedChannel?.id else {return;}
+            guard let message = messageTxtField.text else { return; }
+            SocketService.instance.AddMessage(messageBody: message, userID: UserDataService.instance.id, channelID: channelID) { (success) in
+                if success {
+                    self.messageTxtField.text = "";
+                    self.messageTxtField.resignFirstResponder();
+                }
             }
         }
     }
@@ -41,6 +60,10 @@ class ChatVC: UIViewController {
     
     @objc func ChannelSelected(_ notification: Notification) {
         UpdateWithChannel();
+    }
+    
+    @objc func HandleTap() {
+        view.endEditing(true);
     }
 
     func UpdateWithChannel() {
@@ -66,7 +89,7 @@ class ChatVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return; }
         MessageService.instance.FindAllMessagesForChannel(channelID: channelId) { (success) in
             if success {
-                
+                print("Messages Fetched!");
             }
         }
     }
