@@ -28,6 +28,7 @@ let URL_LOGIN: String = "\(BASE_URL)account/login";
 let URL_USER_ADD: String = "\(BASE_URL)user/add"
 let URL_USER_BY_EMAIL: String = "\(BASE_URL)user/byEmail/";
 let URL_GET_CHANNELS: String = "\(BASE_URL)/channel/"
+let URL_GET_MESSAGES: String = "\(BASE_URL)/message/byChannel/"
 
 
 // API HEADERS

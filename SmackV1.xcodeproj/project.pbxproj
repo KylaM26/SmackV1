@@ -16,6 +16,7 @@
 		D16B4D1120FDE0AC008F8433 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16B4D0F20FDE0AC008F8433 /* ProfileVC.xib */; };
 		D16B76C920DDFCEE00ACD184 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B76C820DDFCEE00ACD184 /* AuthService.swift */; };
 		D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */; };
+		D16F6C352112E6CA0067858E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6C342112E6CA0067858E /* Message.swift */; };
 		D174687F20DBCAEE0092189D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174687E20DBCAEE0092189D /* AppDelegate.swift */; };
 		D174688420DBCAEE0092189D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D174688220DBCAEE0092189D /* Main.storyboard */; };
 		D174688620DBCAEF0092189D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D174688520DBCAEF0092189D /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		D16B4D0F20FDE0AC008F8433 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		D16B76C820DDFCEE00ACD184 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D16B76CA20DE24BC00ACD184 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		D16F6C342112E6CA0067858E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D174687B20DBCAEE0092189D /* SmackV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D174687E20DBCAEE0092189D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D174688320DBCAEE0092189D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D118B75C2108605D00A863AD /* Channel.swift */,
+				D16F6C342112E6CA0067858E /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				D16B76CB20DE24BC00ACD184 /* RoundedCorners.swift in Sources */,
 				D1B7F6FF20E75A87009DF498 /* AvatarPickerVC.swift in Sources */,
 				D174689B20DBDC2F0092189D /* ChannelVC.swift in Sources */,
+				D16F6C352112E6CA0067858E /* Message.swift in Sources */,
 				D118B75D2108605D00A863AD /* Channel.swift in Sources */,
 				D1033DE120EF6014008E2323 /* CircleImage.swift in Sources */,
 				D118B75B2108601200A863AD /* MessageService.swift in Sources */,

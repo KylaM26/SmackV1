@@ -13,6 +13,7 @@ class MessageService {
     static let instance = MessageService();
     
     var channels = [Channel]();
+    var messages = [Message]();
     var selectedChannel: Channel?
     
     func FindAllChannels(completion: @escaping CompletionHandler) {
@@ -41,4 +42,42 @@ class MessageService {
     func ClearChannels() {
         channels.removeAll();
     }
+    
+    func FindAllMessagesForChannel(channelID: String, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_GET_MESSAGES)\(channelID)", method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                self.ClearMessages();
+                if let json = response.result.value as? [Dictionary<String, Any>] {
+                    for item in json {
+                        if let messageBody = item["messageBody"] as? String {
+                            if let channelID = item["channelId"] as? String {
+                                if let id = item["_id"] as? String {
+                                    if let userName = item["userName"] as? String {
+                                        if let userAvatar = item["userAvatar"] as? String {
+                                            if let userAvatarColor = item["userAvatarColor"] as? String {
+                                                if let timeStamp = item["timeStamp"] as? String {
+                                                    let message = Message(message: messageBody, username: userName, channelID: channelID, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp);
+                                                    print(self.messages);
+                                                    self.messages.append(message);
+                                                    completion(true);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            } else {
+                debugPrint(response.result.error as Any);
+                completion(false);
+            }
+        }
+    }
+        
+        func ClearMessages() {
+            messages.removeAll();
+        }
 }

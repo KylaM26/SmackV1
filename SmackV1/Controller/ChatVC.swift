@@ -33,7 +33,7 @@ class ChatVC: UIViewController {
     @objc func UserDataDidChange(_ notification: Notification) {
         if AuthService.instance.isLoggedIn {
             // Get channels
-            GetChannels();
+            GetMessagesOnLogin();
         } else {
             channelNameLbl.text = "Please Log In";
         }
@@ -46,11 +46,28 @@ class ChatVC: UIViewController {
     func UpdateWithChannel() {
         let channelName =  MessageService.instance.selectedChannel?.channelTitle ?? "SMACK";
         channelNameLbl.text = "#\(channelName)";
+        GetMessages();
     }
     
-    func GetChannels() {
+    func GetMessagesOnLogin() {
         MessageService.instance.FindAllChannels { (success) in
-            
+            if(success) {
+                if MessageService.instance.channels.count > 0 { // If there is a channel
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]; // On default set the first channel as selected channel.
+                    self.UpdateWithChannel();
+                } else {
+                    self.channelNameLbl.text = "No channels";
+                }
+            }
+        }
+    }
+    
+    func GetMessages() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return; }
+        MessageService.instance.FindAllMessagesForChannel(channelID: channelId) { (success) in
+            if success {
+                
+            }
         }
     }
 }
