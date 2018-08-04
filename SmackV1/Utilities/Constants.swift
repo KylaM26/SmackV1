@@ -43,6 +43,7 @@ let BEARER_HEADER = [
 
 // IDENTIFIERS
 let CHANNEL_CELL_IDENTIFER = "ChannelCell";
+let MESSAGE_CELL_IDENTIFER = "MessageCell";
 
 // COLORS
 let smackPurplePlaceholder = #colorLiteral(red: 0.5910333991, green: 0.5910333991, blue: 0.5910333991, alpha: 0.5)

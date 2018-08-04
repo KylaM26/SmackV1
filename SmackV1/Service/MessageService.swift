@@ -58,6 +58,7 @@ class MessageService {
                                                 if let timeStamp = item["timeStamp"] as? String {
                                                     let message = Message(message: messageBody, username: userName, channelID: channelID, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp);
                                                     print(self.messages);
+                                                    print("User avatar: \(userAvatar)");
                                                     self.messages.append(message);
                                                     completion(true);
                                                 }
