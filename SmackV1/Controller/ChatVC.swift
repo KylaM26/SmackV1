@@ -14,8 +14,11 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var channelNameLbl: UILabel!
 
     @IBOutlet weak var messageTxtField: UITextField!
+    @IBOutlet weak var sendMessageBtn: UIButton!
     
     @IBOutlet weak var messageView: UITableView!
+    
+    var isTypingMessage: Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,9 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // For dynamic sizing to message lbl.
         messageView.estimatedRowHeight = 80;
         messageView.rowHeight = UITableViewAutomaticDimension;
+        
+        sendMessageBtn.isHidden = true;
+        sendMessageBtn.isEnabled = false;
         
         view.bindToKeyboard();
         
@@ -38,6 +44,16 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.UserDataDidChange(_:)), name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.ChannelSelected(_:)), name: NOTIFICATION_CHANNEL_SELECTED, object: nil);
         
+        SocketService.instance.GetNewChatMessage { (success) in
+            if success {
+                self.messageView.reloadData();
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0);
+                    self.messageView.scrollToRow(at: endIndex, at: .bottom, animated: true);
+                }
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.FindUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
@@ -45,8 +61,24 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    @IBAction func EditingMessageTxtField(_ sender: Any) {
+        if messageTxtField.text == "" {
+            isTypingMessage = false;
+        } else {
+            isTypingMessage = true;
+        }
+        
+        if isTypingMessage == false {
+            sendMessageBtn.isEnabled = false;
+            sendMessageBtn.isHidden = true;
+        } else {
+            sendMessageBtn.isEnabled = true;
+            sendMessageBtn.isHidden = false;
+        }
+    }
+    
     @IBAction func SendMessagePressed(_ sender: Any) {
-        if AuthService.instance.isLoggedIn {
+        if AuthService.instance.isLoggedIn && messageTxtField.text != "" {
             guard let channelID = MessageService.instance.selectedChannel?.id else {return;}
             guard let message = messageTxtField.text else { return; }
             SocketService.instance.AddMessage(messageBody: message, userID: UserDataService.instance.id, channelID: channelID) { (success) in
@@ -64,6 +96,7 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             GetMessagesOnLogin();
         } else {
             channelNameLbl.text = "Please Log In";
+            messageView.reloadData();
         }
     }
     
@@ -120,4 +153,5 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell();
     }
+
 }

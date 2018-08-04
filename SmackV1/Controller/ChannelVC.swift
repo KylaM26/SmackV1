@@ -90,7 +90,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = channelView.dequeueReusableCell(withIdentifier: CHANNEL_CELL_IDENTIFER, for: indexPath) as? ChannelCell {
             let channel = MessageService.instance.channels[indexPath.row];
             cell.UpdateCell(channel: channel);
-            print("Channel \(indexPath.row): \(MessageService.instance.channels[indexPath.row])");
             return cell;
         }
         print("Channel view failed to load channel cells.");

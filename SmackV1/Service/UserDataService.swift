@@ -71,5 +71,6 @@ class UserDataService {
         AuthService.instance.userEmail = "";
         AuthService.instance.offToken = "";
         MessageService.instance.ClearChannels();
+        MessageService.instance.ClearMessages();
     }
 }

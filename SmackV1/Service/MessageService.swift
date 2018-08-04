@@ -57,8 +57,6 @@ class MessageService {
                                             if let userAvatarColor = item["userAvatarColor"] as? String {
                                                 if let timeStamp = item["timeStamp"] as? String {
                                                     let message = Message(message: messageBody, username: userName, channelID: channelID, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp);
-                                                    print(self.messages);
-                                                    print("User avatar: \(userAvatar)");
                                                     self.messages.append(message);
                                                     completion(true);
                                                 }
@@ -78,7 +76,7 @@ class MessageService {
         }
     }
         
-        func ClearMessages() {
-            messages.removeAll();
-        }
+    func ClearMessages() {
+        messages.removeAll();
+    }
 }

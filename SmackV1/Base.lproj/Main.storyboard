@@ -667,6 +667,9 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EditingMessageTxtField:" destination="NAB-Ui-eVl" eventType="editingChanged" id="qJ7-D2-nF4"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pn-n8-kGA">
                                 <rect key="frame" x="329" y="632" width="30" height="30"/>
@@ -744,14 +747,14 @@
                         <constraints>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="3ug-P4-WQI"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="4gY-l6-QWJ"/>
-                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="top" secondItem="02P-NW-A9O" secondAttribute="bottom" id="9UP-8T-n4M"/>
-                            <constraint firstItem="OoI-Uh-971" firstAttribute="top" secondItem="Dqo-2y-Ay0" secondAttribute="bottom" constant="30" id="O1F-9o-Vcm"/>
+                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="top" secondItem="02P-NW-A9O" secondAttribute="bottom" id="Br2-R2-7Jg"/>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="bottom" secondItem="OuI-f5-d5z" secondAttribute="bottom" id="PeW-Qr-FN9"/>
+                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="QjZ-LB-LVH"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="top" secondItem="sEM-LX-KWf" secondAttribute="top" id="W0I-mD-P8S"/>
-                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="a1l-t7-w1S"/>
-                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="ad7-C7-C20"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="fds-LK-5nQ"/>
+                            <constraint firstItem="Dqo-2y-Ay0" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="qZm-i0-It3"/>
                             <constraint firstItem="1pn-n8-kGA" firstAttribute="leading" secondItem="OoI-Uh-971" secondAttribute="trailing" constant="-46" id="qmJ-AJ-UyJ"/>
+                            <constraint firstItem="OoI-Uh-971" firstAttribute="top" secondItem="Dqo-2y-Ay0" secondAttribute="bottom" constant="30" id="ru7-Gj-fyJ"/>
                             <constraint firstItem="1pn-n8-kGA" firstAttribute="top" secondItem="OoI-Uh-971" secondAttribute="top" constant="5" id="til-lJ-APr"/>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="zM1-fq-rVy"/>
                         </constraints>
@@ -762,6 +765,7 @@
                         <outlet property="messageTxtField" destination="OoI-Uh-971" id="c6N-PL-8wr"/>
                         <outlet property="messageView" destination="Dqo-2y-Ay0" id="TVk-cm-PRy"/>
                         <outlet property="revealBtn" destination="3l1-SC-UlI" id="N7r-5D-vYL"/>
+                        <outlet property="sendMessageBtn" destination="1pn-n8-kGA" id="dM5-X8-Y79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FU0-hJ-St0" userLabel="First Responder" sceneMemberID="firstResponder"/>
