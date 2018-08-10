@@ -12,6 +12,7 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var revealBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
+    @IBOutlet weak var UserTypingMessage: UILabel!
 
     @IBOutlet weak var messageTxtField: UITextField!
     @IBOutlet weak var sendMessageBtn: UIButton!
@@ -54,6 +55,33 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         
+        SocketService.instance.GetTypingUsers { (typingUsers) in
+            guard let channelID = MessageService.instance.selectedChannel?.id else { return; }
+            var names = "";
+            var numberOfTypers = 0;
+            
+            for (typingUser, channel) in typingUsers { // For dictionary
+                if typingUser != UserDataService.instance.name && channel == channelID {
+                    if names == "" {
+                        names = typingUser;
+                    } else {
+                        names = "\(names), \(typingUsers)"
+                    }
+                    numberOfTypers += 1;
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn {
+                var verb = "is";
+                if numberOfTypers > 1 {
+                    verb = "are";
+                }
+                self.UserTypingMessage.text = "\(names) \(verb) typing."
+            } else {
+                self.UserTypingMessage.text = "";
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.FindUserByEmail { (success) in
                 NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_CHANGED, object: nil);
@@ -62,10 +90,13 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func EditingMessageTxtField(_ sender: Any) {
+        guard let channelID = MessageService.instance.selectedChannel?.id else { return; }
         if messageTxtField.text == "" {
             isTypingMessage = false;
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelID);
         } else {
             isTypingMessage = true;
+            SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelID);
         }
         
         if isTypingMessage == false {
@@ -87,6 +118,7 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     self.messageTxtField.resignFirstResponder();
                 }
             }
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelID);
         }
     }
     
@@ -135,6 +167,8 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
+    
     
     // TABLE VIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

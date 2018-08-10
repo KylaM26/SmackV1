@@ -83,7 +83,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="60" id="TE6-fb-4iQ" customClass="ChannelCell" customModule="SmackV1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="60" id="TE6-fb-4iQ" customClass="ChannelCell" customModule="SmackV1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE6-fb-4iQ" id="gc9-EL-ja2">
@@ -712,7 +712,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fgjdhkkgnhjdfkghjkfghjkgfhjgdfhdfghnkdfghdjgkhdnhkngjnhkdgnghdnfnkhjkhgkdnhdgkjhkdg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k61-4J-w5z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k61-4J-w5z">
                                                     <rect key="frame" x="73" y="42" width="287" height="23"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -742,16 +742,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-yS-3j5">
+                                <rect key="frame" x="50" y="603" width="275" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="3ug-P4-WQI"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="4gY-l6-QWJ"/>
+                            <constraint firstItem="OoI-Uh-971" firstAttribute="top" secondItem="hXl-yS-3j5" secondAttribute="bottom" constant="6" id="6bt-Gc-hD8"/>
                             <constraint firstItem="Dqo-2y-Ay0" firstAttribute="top" secondItem="02P-NW-A9O" secondAttribute="bottom" id="Br2-R2-7Jg"/>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="bottom" secondItem="OuI-f5-d5z" secondAttribute="bottom" id="PeW-Qr-FN9"/>
                             <constraint firstItem="Dqo-2y-Ay0" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="QjZ-LB-LVH"/>
+                            <constraint firstItem="hXl-yS-3j5" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" constant="50" id="THu-ae-T6A"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="top" secondItem="sEM-LX-KWf" secondAttribute="top" id="W0I-mD-P8S"/>
+                            <constraint firstItem="OuI-f5-d5z" firstAttribute="trailing" secondItem="hXl-yS-3j5" secondAttribute="trailing" constant="50" id="dVF-rn-klT"/>
                             <constraint firstItem="02P-NW-A9O" firstAttribute="trailing" secondItem="OuI-f5-d5z" secondAttribute="trailing" id="fds-LK-5nQ"/>
+                            <constraint firstItem="hXl-yS-3j5" firstAttribute="top" secondItem="Dqo-2y-Ay0" secondAttribute="bottom" constant="6" id="gxO-SF-P7N"/>
                             <constraint firstItem="Dqo-2y-Ay0" firstAttribute="leading" secondItem="OuI-f5-d5z" secondAttribute="leading" id="qZm-i0-It3"/>
                             <constraint firstItem="1pn-n8-kGA" firstAttribute="leading" secondItem="OoI-Uh-971" secondAttribute="trailing" constant="-46" id="qmJ-AJ-UyJ"/>
                             <constraint firstItem="OoI-Uh-971" firstAttribute="top" secondItem="Dqo-2y-Ay0" secondAttribute="bottom" constant="30" id="ru7-Gj-fyJ"/>
@@ -761,6 +771,7 @@
                         <viewLayoutGuide key="safeArea" id="OuI-f5-d5z"/>
                     </view>
                     <connections>
+                        <outlet property="UserTypingMessage" destination="hXl-yS-3j5" id="1II-FZ-MSm"/>
                         <outlet property="channelNameLbl" destination="7Rm-ma-6dX" id="MGR-k7-0cW"/>
                         <outlet property="messageTxtField" destination="OoI-Uh-971" id="c6N-PL-8wr"/>
                         <outlet property="messageView" destination="Dqo-2y-Ay0" id="TVk-cm-PRy"/>
